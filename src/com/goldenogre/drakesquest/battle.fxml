@@ -1,29 +1,113 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
-<BorderPane fx:controller="sample.Controller"
-            xmlns:fx="http://javafx.com/fxml" >
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.goldenogre.drakesquest.Controller">
 
 <top>
-    <Label text="Drake's Quest" BorderPane.alignment="CENTER"/>
+    <MenuBar>
+        <Menu text="File">
+            <items>
+                <MenuItem text="New..." />
+                <SeparatorMenuItem />
+                <MenuItem text="Exit" />
+            </items>
+        </Menu>
+    </MenuBar>
 </top>
+
+
+
+
+
     <bottom>
-        <Label text="Message area bottom"/>
+        <Label text="Message area bottom" />
 
 
     </bottom>
-    <center>
+   <left>
+      <GridPane BorderPane.alignment="CENTER">
+       <columnConstraints>
+           <ColumnConstraints prefWidth="70" />
+           <ColumnConstraints prefWidth="70" />
+           <ColumnConstraints prefWidth="70" />
+       </columnConstraints>
+       <rowConstraints>
+           <RowConstraints minHeight="20.0" prefHeight="25.0" />
+           <RowConstraints minHeight="20.0" prefHeight="25.0" />
+           <RowConstraints minHeight="20.0" prefHeight="25.0" />
+           <RowConstraints minHeight="20.0" prefHeight="25.0" />
+           <RowConstraints minHeight="20.0" prefHeight="25.0" />
+
+       </rowConstraints>
+       <children>
+           <Label text="Hero" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+           <Label text="HP" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+           <Label text="Dead" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+
+           <Label fx:id="hero1" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+           <Label fx:id="hero2" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+           <Label fx:id="hero3" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+           <Label fx:id="hero4" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+           <Label fx:id="hero1HP" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+           <Label fx:id="hero2HP" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+           <Label fx:id="hero3HP" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+           <Label fx:id="hero4HP" GridPane.columnIndex="1" GridPane.rowIndex="4" />
 
 
-        <ImageView>
-            <Image url="@src\bg-1.png"></Image>
-        </ImageView>
 
-    </center>
+       </children>
+      </GridPane>
+   </left>
+<right>
+<GridPane BorderPane.alignment="CENTER">
+<columnConstraints>
+    <ColumnConstraints prefWidth="70" />
+    <ColumnConstraints prefWidth="70" />
+    <ColumnConstraints prefWidth="70" />
+</columnConstraints>
+<rowConstraints>
+    <RowConstraints minHeight="20.0" prefHeight="25.0" />
+    <RowConstraints minHeight="20.0" prefHeight="25.0" />
+    <RowConstraints minHeight="20.0" prefHeight="25.0" />
+    <RowConstraints minHeight="20.0" prefHeight="25.0" />
+    <RowConstraints minHeight="20.0" prefHeight="25.0" />
+            <RowConstraints />
+
+</rowConstraints>
+<children>
+    <Label text="Enemy" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+    <Label text="HP" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+    <Label text="Dead" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+    <Label fx:id="enemy1" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    <Label fx:id="enemy2" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <Label fx:id="enemy3" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+    <Label fx:id="enemy4" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+    <Label fx:id="enemy5" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+
+    <Label fx:id="enemy1HP" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <Label fx:id="enemy2HP" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    <Label fx:id="enemy3HP" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    <Label fx:id="enemy4HP" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+    <Label fx:id="enemy5HP" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+
+</children>
+</GridPane>
+</right>
+   <center>
+      <Button fx:id="attackButton" text="Attack" BorderPane.alignment="CENTER" onAction="#onButtonClicked"/>
+   </center>
+
+
 
 </BorderPane>
