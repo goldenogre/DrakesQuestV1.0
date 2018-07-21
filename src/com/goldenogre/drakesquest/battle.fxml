@@ -4,17 +4,26 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <BorderPane fx:controller="sample.Controller"
-                xmlns:fx="http://javafx.com/fxml" >
-    <Button text="Hello GitHup"/>
+            xmlns:fx="http://javafx.com/fxml" >
+
 <top>
     <Label text="Drake's Quest" BorderPane.alignment="CENTER"/>
 </top>
     <bottom>
         <Label text="Message area bottom"/>
+
+
     </bottom>
     <center>
-        <Label text="Enemy!"/>
+
+
+        <ImageView>
+            <Image url="@src\bg-1.png"></Image>
+        </ImageView>
+
     </center>
 
 </BorderPane>
