@@ -1,6 +1,6 @@
 package entity;
 
-abstract class Entity {
+public class Entity {
 	private String name;
 	private int hitPoints;
 	private int attack;
@@ -9,14 +9,15 @@ abstract class Entity {
 	private int defense;
 	private int magicDefense;
 	private int experience;
-	private char resist;
+	private char type;
 	private boolean isDead;
+
 	
 	
 
 
 public Entity(String name, int hitPoints, int attack, int critical, int evasion, int defense, int magicDefense,
-		int experience, char resist, boolean isDead) {
+			  int experience, char type, boolean isDead) {
 	super();
 	this.name = name;
 	this.hitPoints = hitPoints;
@@ -26,8 +27,8 @@ public Entity(String name, int hitPoints, int attack, int critical, int evasion,
 	this.defense = defense;
 	this.magicDefense = magicDefense;
 	this.experience = experience;
-	this.resist = resist;
-	this.isDead=false;
+	this.type = type;
+	this.isDead=isDead;
 }
 
 	public String getName() {
@@ -97,12 +98,12 @@ public Entity(String name, int hitPoints, int attack, int critical, int evasion,
 		this.experience = experience;
 	}
 
-	public char getResist() {
-		return resist;
+	public char getType() {
+		return type;
 	}
 
-	public void setResist(char resist) {
-		this.resist = resist;
+	public void setType(char type) {
+		this.type = type;
 	}
 	public boolean isDead() {
 		

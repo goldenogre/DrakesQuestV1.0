@@ -1,5 +1,8 @@
 package com.goldenogre.drakesquest;
 
+//import com.goldenogre.drakesquest.battlesystem.BattleSystem;
+import com.goldenogre.drakesquest.battlesystem.BattleSystemV2;
+import com.goldenogre.drakesquest.com.goldenogre.music.Music;
 import com.goldenogre.drakesquest.data.CreateEnemyGroups;
 import com.goldenogre.drakesquest.data.CreateHeroes;
 import javafx.event.ActionEvent;
@@ -13,6 +16,8 @@ import javafx.scene.control.Label;
 public class Controller {
     CreateHeroes party = new CreateHeroes();
     CreateEnemyGroups enemyGroup = new CreateEnemyGroups();
+    BattleSystemV2 fight;
+//    Music play = new Music();
     @FXML
     private Label hero1,hero2,hero3,hero4,hero1HP,hero2HP,hero3HP,hero4HP;
     @FXML
@@ -21,7 +26,9 @@ public class Controller {
     private Button attackButton;
 
 
+
     public void initialize(){
+        fight= new BattleSystemV2(party.getParty(),enemyGroup.getBoss1());
 
         hero1.setText(party.getParty().get(0).getName());
         hero2.setText(party.getParty().get(1).getName());
@@ -45,20 +52,33 @@ public class Controller {
         enemy3HP.setText(String.valueOf(enemyGroup.getBoss1().get(2).getHitPoints()));
         enemy4HP.setText(String.valueOf(enemyGroup.getBoss1().get(3).getHitPoints()));
         enemy5HP.setText(String.valueOf(enemyGroup.getBoss1().get(4).getHitPoints()));
+
+
     }
     public void setStats(){
         hero1HP.setText(String.valueOf(party.getParty().get(0).getHitPoints()));
         hero2HP.setText(String.valueOf(party.getParty().get(1).getHitPoints()));
         hero3HP.setText(String.valueOf(party.getParty().get(2).getHitPoints()));
         hero4HP.setText(String.valueOf(party.getParty().get(3).getHitPoints()));
+
+        enemy1HP.setText(String.valueOf(enemyGroup.getBoss1().get(0).getHitPoints()));
+        enemy2HP.setText(String.valueOf(enemyGroup.getBoss1().get(1).getHitPoints()));
+        enemy3HP.setText(String.valueOf(enemyGroup.getBoss1().get(2).getHitPoints()));
+        enemy4HP.setText(String.valueOf(enemyGroup.getBoss1().get(3).getHitPoints()));
+        enemy5HP.setText(String.valueOf(enemyGroup.getBoss1().get(4).getHitPoints()));
+
     }
     @FXML
     public void onButtonClicked(ActionEvent e){
-        System.out.println("You clicked the button");
+        System.out.println("Battle starting.....");
+        fight.startAttack();
 
-        party.getParty().get(1).damage(23);
-        party.getParty().get(2).damage(11);
-        party.getParty().get(3).damage(15);
+//
+
         setStats();
+
+
+
+
     }
 }
